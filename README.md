@@ -1,4 +1,4 @@
-# 🚨 Emergency Management System with AI / Sistema di Gestione Emergenze con Intelligenza Artificiale
+# 🚨 Responso - Emergency Management System with AI / Sistema di Gestione Emergenze con Intelligenza Artificiale
 
 ## 🇬🇧 English Description
 
