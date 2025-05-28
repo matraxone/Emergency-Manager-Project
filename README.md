@@ -4,6 +4,8 @@
 
 An intelligent and interactive web application for emergency management, based on **React**, **Node.js**, **MySQL**, and **AI (via Regolo)**. The app allows users to report emergencies, automatically classifies urgency, selects the most suitable intervention unit, and reformulates the emergency description in a clear and concise way for operators.
 
+> ⚠️ **Important:** Before running the application, you must create a `.env` file in the root directory containing your AI API key. See the installation section for details.
+
 ### 🔧 Features
 
 - **Emergency Submission:**  
@@ -40,7 +42,10 @@ An intelligent and interactive web application for emergency management, based o
 1. Clone this repo
 2. Install frontend and backend dependencies
 3. Set up the MySQL database and create the `chiamate` table
-4. Add your Regolo API key in `server.js`
+4. **Create a `.env` file in the root directory with your Regolo API key:**
+   ```
+   REGOLO_API_KEY=your_api_key_here
+   ```
 5. Run backend (`node server.js`)
 6. Run frontend (`npm start`)
 
@@ -48,7 +53,9 @@ An intelligent and interactive web application for emergency management, based o
 
 ## 🇮🇹 Descrizione in Italiano
 
-Un'app web intelligente per la gestione delle emergenze, realizzata con **React**, **Node.js**, **MySQL** e **AI (tramite Regolo)**. Permette di inviare segnalazioni, classificare automaticamente l’urgenza, selezionare l’unità più adatta e riformulare tecnicamente la descrizione per gli operatori.
+Un'app web intelligente per la gestione delle emergenze, realizzata con **React**, **Node.js**, **MySQL** e **AI (tramite Regolo)**. Permette di inviare segnalazioni, classificare automaticamente l'urgenza, selezionare l'unità più adatta e riformulare tecnicamente la descrizione per gli operatori.
+
+> ⚠️ **Importante:** Prima di avviare l'applicazione, è necessario creare un file `.env` nella directory principale contenente la chiave API dell'intelligenza artificiale. Vedere la sezione installazione per i dettagli.
 
 ### 🔧 Funzionalità
 
@@ -86,6 +93,9 @@ Un'app web intelligente per la gestione delle emergenze, realizzata con **React*
 1. Clona il repository
 2. Installa le dipendenze frontend e backend
 3. Crea il database MySQL e la tabella `chiamate`
-4. Inserisci la tua API Key Regolo in `server.js`
+4. **Crea un file `.env` nella directory principale con la tua chiave API Regolo:**
+   ```
+   REGOLO_API_KEY=la_tua_chiave_api_qui
+   ```
 5. Avvia il backend (`node server.js`)
 6. Avvia il frontend (`npm start`)
