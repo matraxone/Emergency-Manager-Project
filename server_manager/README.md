@@ -1,4 +1,4 @@
-# 🚨 Emergency Management System - Server
+# 🚨 Emergency Management System - Backend
 
 ## 🇬🇧 English
 
