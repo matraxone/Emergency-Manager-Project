@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Mag 28, 2025 alle 11:10
--- Versione del server: 10.4.32-MariaDB
--- Versione PHP: 8.2.12
+-- Created on: May 28, 2025 at 11:10
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `calls`
+-- Table structure for table `calls`
 --
 
 CREATE TABLE `calls` (
@@ -41,28 +41,28 @@ CREATE TABLE `calls` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dump dei dati per la tabella `calls`
+-- Data dump for table `calls`
 --
 
 INSERT INTO `calls` (`id`, `unit`, `description`, `address`, `lat`, `lng`, `urgency`, `timestamp`, `code`, `date_time`) VALUES
 (35, 'police', 'Furto armato in corso con coltello', 'Via Aldo Moro, Fr', 41.6433573, 13.3459263, 'Red', '2025-05-28 07:10:40', 'Z62', '2025-05-28 09:10:02');
 
 --
--- Indici per le tabelle scaricate
+-- Indexes for dumped tables
 --
 
 --
--- Indici per le tabelle `calls`
+-- Indexes for table `calls`
 --
 ALTER TABLE `calls`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT per le tabelle scaricate
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT per la tabella `calls`
+-- AUTO_INCREMENT for table `calls`
 --
 ALTER TABLE `calls`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
