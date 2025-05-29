@@ -4,6 +4,8 @@
 
 A powerful Node.js backend for emergency management with AI integration, built with Express.js, Sequelize ORM, and MySQL database.
 
+> ⚠️ **Important:** This backend server requires proper configuration with a `.env` file containing your AI API key and database credentials before running. The frontend application depends on this server being running and properly configured. See the installation section for complete setup details.
+
 ### 🚀 Features
 
 - **RESTful API** for emergency call management
@@ -38,26 +40,34 @@ A powerful Node.js backend for emergency management with AI integration, built w
    ```
 
 3. **Configure environment variables**
-   Create a `.env` file in the root directory:
+   **⚠️ REQUIRED:** Create a `.env` file in the server_manager directory with the following configuration:
    ```env
+   # Database Configuration
+   DB_HOST=localhost
+   DB_PORT=3306
+   DB_NAME=emergencies
+   DB_USER=root
+   DB_PASSWORD=
+
+   # AI API Configuration (REQUIRED)
    REGOLO_API_KEY=your_regolo_api_key_here
    AI_API_URL=https://api.regolo.ai/v1/chat/completions
    AI_MODEL=DeepSeek-R1-Distill-Qwen-32B
-   NODE_ENV=development
+
+   # Server Configuration
    PORT=3001
+   NODE_ENV=development
+
+   # Timezone Configuration
+   TZ=Europe/Rome
    ```
+   
+   **Note:** The `REGOLO_API_KEY` is mandatory for AI-powered emergency classification. Without it, the server will not be able to automatically classify emergencies or assign appropriate units.
 
 4. **Setup MySQL Database**
    - Create a MySQL database named `emergencies`
-   - Update database credentials in `config/database.js` if needed:
-     ```javascript
-     const sequelize = new Sequelize('emergencies', 'root', '', {
-       host: 'localhost',
-       dialect: 'mysql',
-       port: 3306,
-       // ...
-     });
-     ```
+   - Update database credentials in your `.env` file if different from defaults
+   - The server will automatically create the required tables on first run
 
 5. **Start the server**
    ```bash
@@ -263,6 +273,13 @@ The server implements comprehensive error handling:
    kill -9 <PID>
    ```
 
+4. **Missing .env File**
+   ```bash
+   # Verify .env file exists and contains required variables
+   ls -la .env
+   cat .env | grep REGOLO_API_KEY
+   ```
+
 ### 📝 Development Notes
 
 - The server automatically recreates the database schema on startup (`force: true`)
@@ -270,12 +287,15 @@ The server implements comprehensive error handling:
 - All units are stored in English in the database for consistency
 - Timestamps use Italy timezone (`+02:00`)
 - Soft delete is enabled for data recovery capabilities
+- **IMPORTANT**: Ensure the `.env` file is properly configured before starting the server
 
 ---
 
 ## 🇮🇹 Italiano
 
 Un potente backend Node.js per la gestione delle emergenze con integrazione AI, costruito con Express.js, Sequelize ORM e database MySQL.
+
+> ⚠️ **Importante:** Questo server backend richiede una configurazione adeguata con un file `.env` contenente la chiave API AI e le credenziali del database prima dell'esecuzione. L'applicazione frontend dipende da questo server in esecuzione e configurato correttamente. Vedi la sezione installazione per i dettagli completi di configurazione.
 
 ### 🚀 Funzionalità
 
@@ -311,18 +331,34 @@ Un potente backend Node.js per la gestione delle emergenze con integrazione AI, 
    ```
 
 3. **Configura le variabili d'ambiente**
-   Crea un file `.env` nella directory root:
+   **⚠️ RICHIESTO:** Crea un file `.env` nella directory server_manager con la seguente configurazione:
    ```env
+   # Configurazione Database
+   DB_HOST=localhost
+   DB_PORT=3306
+   DB_NAME=emergencies
+   DB_USER=root
+   DB_PASSWORD=
+
+   # Configurazione API AI (RICHIESTA)
    REGOLO_API_KEY=your_regolo_api_key_here
    AI_API_URL=https://api.regolo.ai/v1/chat/completions
    AI_MODEL=DeepSeek-R1-Distill-Qwen-32B
-   NODE_ENV=development
+
+   # Configurazione Server
    PORT=3001
+   NODE_ENV=development
+
+   # Configurazione Timezone
+   TZ=Europe/Rome
    ```
+   
+   **Nota:** La `REGOLO_API_KEY` è obbligatoria per la classificazione delle emergenze basata su AI. Senza di essa, il server non sarà in grado di classificare automaticamente le emergenze o assegnare le unità appropriate.
 
 4. **Configura il Database MySQL**
    - Crea un database MySQL chiamato `emergencies`
-   - Aggiorna le credenziali del database in `config/database.js` se necessario
+   - Aggiorna le credenziali del database nel tuo file `.env` se diverse dai valori predefiniti
+   - Il server creerà automaticamente le tabelle necessarie al primo avvio
 
 5. **Avvia il server**
    ```bash
