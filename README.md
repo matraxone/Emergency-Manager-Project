@@ -60,16 +60,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
    ```
 
 3. **Configure environment variables**
-   Create a `.env` file in the emergency_manager directory:
-   ```env
-   REACT_APP_API_BASE_URL=http://localhost:3001/api
-   REACT_APP_NOMINATIM_URL=https://nominatim.openstreetmap.org
-   REACT_APP_DEFAULT_MAP_CENTER_LAT=45.4642
-   REACT_APP_DEFAULT_MAP_CENTER_LNG=9.1900
-   REACT_APP_DEFAULT_MAP_ZOOM=10
-   ```
-
-   **Note:** The backend server also requires its own `.env` file in the server_manager directory:
+   **Note:** The backend server requires a `.env` file in the server_manager directory:
    ```env
    # Database
    DB_HOST=localhost
